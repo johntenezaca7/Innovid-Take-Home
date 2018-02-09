@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from  'react-router-dom';
 import axios from 'axios';
 
+import Header from './components/Header';
+import Select from './components/Select';
+import Laptops from './components/Laptops';
+import Health from './components/Health';
 
 class App extends Component {
     constructor(props){
@@ -22,23 +27,17 @@ class App extends Component {
     }
     render(){
         return(
-            <div className="Main-Display">
-                <div className="Header">
-                    <img className="best-buy-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Best_Buy_Logo.svg" alt="logo" />
-                </div>
-                <div className="Select">
-                    <div className="Laptops">
-                      <img className="laptop-pic" src="https://image.ibb.co/dsu2Lc/stock_laptop.png" alt="laptop" />
+            <div className="Main-Display">      
+                <BrowserRouter>
+                    <div>
+                        <Header />
+                        <Route  exact path="/" component={Select}/>
+                        <Route exact path="/Laptops" render={() => <Laptops data={this.state.laptops}/>} />
+                        <Route exact path="/Health" render={() => <Health data={this.state.healthFB}/>} />
                     </div>
-                    <div className="Health">
-                        <img className="health-pic" src="https://image.ibb.co/cv7YRH/output_3.png" alt="health" />
-                    </div>
-                </div>
-                <div className="Click-To">
-                    <h1>Click to choose</h1>
-                </div>
+                </BrowserRouter>
             </div>
-        )
+        );
     }
 }
 
