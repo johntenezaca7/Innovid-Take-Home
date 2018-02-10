@@ -21,7 +21,7 @@ class Select extends Component {
                     <h1>Click to choose</h1>
                 </div>
             </div>
-        )
+        );
     }
 }
 

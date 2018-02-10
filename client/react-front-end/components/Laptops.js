@@ -32,7 +32,6 @@ class Laptops extends Component{
     }
 
     render(){
-
         return(
             <div className="Info">
                 <div className="Title">
@@ -43,21 +42,20 @@ class Laptops extends Component{
                     <img src={this.state.current.images.standard} alt="picture" />
                     <div className="more-info">
                         <div className="Price">
-                        Price: ${this.state.current.prices.current}
+                            Price: ${this.state.current.prices.current}
                         </div>
                         <div>
-                        Description:<br />
-                        {this.state.current.descriptions.short}
+                            Description:<br />
+                            {this.state.current.descriptions.short}
                         </div>
                         <button className="Shop">
                             <a href={this.state.current.links.web}>
-                            Shop Now
+                                Shop Now
                             </a>
                         </button>
                     </div>
                     <button onClick={this.onRightClick.bind(this)}>Right</button>
                 </div>
-            
             </div>
         )
     }

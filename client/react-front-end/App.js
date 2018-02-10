@@ -15,16 +15,18 @@ class App extends Component {
             laptops: [],
             healthFB: []
         }
-    }
+    };
 
     componentWillMount(){
+        //Before components are mounted to the DOM, two GET requests are sent to get inital data
         axios.get('/api/laptops').then(res => this.setState({
             laptops: res.data.results
          }));
         axios.get('/api/healthFitB').then(res => this.setState({
             healthFB: res.data.results
         }));
-    }
+    };
+
     render(){
         return(
             <div className="Main-Display">      

@@ -33,10 +33,9 @@ class Health extends Component{
     }
 
     render(){
-        console.log('props', this.props.data)
         return(
             <div className="Info">
-              <div className="Title">
+                <div className="Title">
                     {this.state.current.names.title}
                 </div>
                 <div className="divide-display">
@@ -44,15 +43,15 @@ class Health extends Component{
                     <img src={this.state.current.images.standard} alt="picture" />
                     <div className="more-info">
                         <div className="Price">
-                        Price: ${this.state.current.prices.current}
+                            Price: ${this.state.current.prices.current}
                         </div>
                         <div>
-                        Description: <br />
-                        {this.state.current.descriptions.short}
+                            Description: <br />
+                            {this.state.current.descriptions.short}
                         </div>
                         <button className="Shop">
                             <a href={this.state.current.links.web}>
-                            Shop Now
+                                Shop Now
                             </a>
                         </button>
                     </div>
