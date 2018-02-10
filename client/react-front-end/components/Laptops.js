@@ -32,24 +32,32 @@ class Laptops extends Component{
     }
 
     render(){
-        console.log('test', this.state.current)
+
         return(
-            <div className="Laptop-Info">
-                <div>{this.state.current.names.title}</div>
-                <img src={this.state.current.images.standard} alt="picture" />
-                <div>
-                price: ${this.state.current.prices.current}
+            <div className="Info">
+                <div className="Title">
+                    {this.state.current.names.title}
                 </div>
-                <div>
-                description: {this.state.current.descriptions.short}
+                <div className="divide-display">
+                    <button onClick={this.onLeftClick.bind(this)}>Left</button>
+                    <img src={this.state.current.images.standard} alt="picture" />
+                    <div className="more-info">
+                        <div className="Price">
+                        Price: ${this.state.current.prices.current}
+                        </div>
+                        <div>
+                        Description:<br />
+                        {this.state.current.descriptions.short}
+                        </div>
+                        <button className="Shop">
+                            <a href={this.state.current.links.web}>
+                            Shop Now
+                            </a>
+                        </button>
+                    </div>
+                    <button onClick={this.onRightClick.bind(this)}>Right</button>
                 </div>
-                <div>
-                    <a href={this.state.current.links.web}>
-                    SHOP NOW
-                    </a>
-                </div>
-                <button onClick={this.onRightClick.bind(this)}>Right</button>
-                <button onClick={this.onLeftClick.bind(this)}>Left</button>
+            
             </div>
         )
     }

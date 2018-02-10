@@ -66,5 +66,55 @@ body, html {
 .Click-To {
     text-align: center;
     color: rgb(2, 99, 163);
+}
 
+.Info {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.Title {
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.divide-display {
+    display: grid;
+    grid-template-columns: 5% 55% 35% 5%;
+    padding-top: 5%;
+    
+}
+
+.divide-display img {
+    height: 250px;
+    width: auto;
+    padding-left: 10%;
+
+}
+
+.Price {
+    color: rgb(2, 99, 163);
+    font-size: 23px;
+
+}
+
+.Shop {
+    background-color: rgb(238, 125, 20);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+
+.Shop a { 
+ color:white;
+ text-decoration: none;
 }
