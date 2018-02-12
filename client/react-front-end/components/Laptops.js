@@ -38,8 +38,10 @@ class Laptops extends Component{
                     {this.state.current.names.title}
                 </div>
                 <div className="divide-display">
-                    <button onClick={this.onLeftClick.bind(this)}>Left</button>
-                    <img src={this.state.current.images.standard} alt="picture" />
+                    <div className="left-button" onClick={this.onLeftClick.bind(this)}></div>
+                    <div className="stock-photo">
+                        <img src={this.state.current.images.standard} alt="picture" />
+                    </div>
                     <div className="more-info">
                         <div className="Price">
                             Price: ${this.state.current.prices.current}
@@ -54,7 +56,7 @@ class Laptops extends Component{
                             </a>
                         </button>
                     </div>
-                    <button onClick={this.onRightClick.bind(this)}>Right</button>
+                    <div className="right-button" onClick={this.onRightClick.bind(this)}></div>
                 </div>
             </div>
         )

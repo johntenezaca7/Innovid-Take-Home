@@ -30,6 +30,10 @@ app.get('/api/healthFitB', (req, res) => {
     axios.get(HEALTHFIT_REQUEST).then(response => res.send(response.data));
 
 });
+// If API endpoint does not exisit in the server, client is redirected to the home page
+app.get('*', (req, res) => {
+   res.redirect('/')
+});
 
 
 const PORT = process.env.PORT || 3050;
