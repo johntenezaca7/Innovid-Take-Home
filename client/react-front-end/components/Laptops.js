@@ -18,7 +18,7 @@ class Laptops extends Component{
                current: next[cur]
            })
         }
-    }
+    };
 
     onLeftClick(){
         if(this.state.idx !== 0){
@@ -29,13 +29,28 @@ class Laptops extends Component{
                 current: next[cur]
             })
          }
-    }
+    };
 
     render(){
+
+        const truncateTitle = (text) => {
+            const short = text.indexOf(' ', 25);
+            if( short === -1  ) return text; 
+
+            return text.substring(0, short) 
+        };
+
+        const format = (text) => {
+             return text.split(';').map((ele, i) => {
+                    ele = ele.trim();
+                 return (<div key={i}>-{ele}</div>)
+             });
+        };
+
         return(
             <div className="Info">
                 <div className="Title">
-                    {this.state.current.names.title}
+                    {truncateTitle(this.state.current.names.title)}
                 </div>
                 <div className="divide-display">
                     <div className="left-button" onClick={this.onLeftClick.bind(this)}></div>
@@ -46,9 +61,9 @@ class Laptops extends Component{
                         <div className="Price">
                             Price: ${this.state.current.prices.current}
                         </div>
-                        <div>
-                            Description:<br />
-                            {this.state.current.descriptions.short}
+                        <div className="short-desc">
+                            Specs:<br />
+                            {format(this.state.current.descriptions.short)}
                         </div>
                         <button className="Shop">
                             <a href={this.state.current.links.web}>

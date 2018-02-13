@@ -33,10 +33,20 @@ class Health extends Component{
     }
 
     render(){
+        const truncateTitle = (text) => {
+            const short = text.indexOf(' ', 25);
+            if( short === -1  ) return text; 
+
+            return text.substring(0, short) 
+        };
+
+        const format = (text) => {
+            return text.split(';').join('; \n');        
+        };
         return(
             <div className="Info">
                 <div className="Title">
-                    {this.state.current.names.title}
+                {truncateTitle(this.state.current.names.title)}
                 </div>
                 <div className="divide-display">
                     <div className="left-button" onClick={this.onLeftClick.bind(this)}></div>
@@ -47,9 +57,9 @@ class Health extends Component{
                         <div className="Price">
                             Price: ${this.state.current.prices.current}
                         </div>
-                        <div>
+                        <div className="short-desc">
                             Description: <br />
-                            {this.state.current.descriptions.short}
+                             {format(this.state.current.descriptions.short)}
                         </div>
                         <button className="Shop">
                             <a href={this.state.current.links.web}>
