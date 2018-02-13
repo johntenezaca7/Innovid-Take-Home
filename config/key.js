@@ -5,8 +5,6 @@ if (process.env.NODE_ENV === 'production') {
         key: process.env.KEY
     };    
 } else {
-    module.exports = {
-        key: '48brf8pcam5mw2nqsgxtyd4g'
-    };
+    module.exports = require('./dev')
 }
 
